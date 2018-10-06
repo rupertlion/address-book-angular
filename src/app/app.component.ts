@@ -6,6 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  contact: any;
+
+  constructor() {
+
+    this.contact = {
+      name: ``,
+      email: ``,
+      company: ``,
+      role: ``,
+      twitter: ``,
+      location: ``,
+      notes: ``
+    }
+
+  }
+  
   title = 'address-book-angular';
 
   createNewContact() {
