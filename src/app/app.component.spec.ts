@@ -22,4 +22,24 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
+  it('createContact should add contact to contacts', async(() => {
+    const contact = {
+      name: 'John Doe',
+      email: 'john@craftacademy.se',
+      company: 'Craft Academy',
+      role: 'Tester',
+      twitter: '@tester',
+      location: 'Stockholm',
+      notes: 'There are no notes on this guy'
+    };
+
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+
+    app.contact = contact;
+    app.createNewContact();
+
+    expect(app.contacts[app.contacts.length -1]).toEqual(contact);
+  }));
+
 });
